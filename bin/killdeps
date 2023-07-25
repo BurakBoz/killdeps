@@ -160,20 +160,23 @@ function scanDirectory($directory, $useLockFile = false, $dryRun = false): void
     if (is_dir($directory) && is_readable($directory))
     {
         checkAndDeleteFrom($directory, $useLockFile, $dryRun);
-
-        foreach ((@scandir($directory)) as $item)
+        $scan = @scandir($directory);
+        if($scan)
         {
-            if ($item === '.' || $item === '..')
+            foreach ($scan as $item)
             {
-                continue;
-            }
-            $path = $directory . DIRECTORY_SEPARATOR . $item;
-            if (is_dir($path))
-            {
-                $scanDirCount++;
-                // Skip recursive scan for vendor and node_modules paths
-                (!in_array(basename($path), ["vendor","node_modules"])) && checkAndDeleteFrom($path, $useLockFile, $dryRun);
-                scanDirectory($path, $useLockFile, $dryRun);
+                if ($item === '.' || $item === '..')
+                {
+                    continue;
+                }
+                $path = $directory . DIRECTORY_SEPARATOR . $item;
+                if (is_dir($path))
+                {
+                    $scanDirCount++;
+                    // Skip recursive scan for vendor and node_modules paths
+                    (!in_array(basename($path), ["vendor","node_modules"])) && checkAndDeleteFrom($path, $useLockFile, $dryRun);
+                    scanDirectory($path, $useLockFile, $dryRun);
+                }
             }
         }
     }
