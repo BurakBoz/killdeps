@@ -1,0 +1,20 @@
+{
+  "name": "burakboz/killdeps",
+  "description": "A powerful cleaner and analyzer tool that efficiently scans and deletes 'vendor' and 'node_modules' directories in PHP and JavaScript development environments.",
+  "version": "1.0.0",
+  "require": {
+    "php": ">=8.0"
+  },
+  "scripts": {
+    "killdeps": "bin/killdeps"
+  },
+  "bin": [
+    "bin/killdeps"
+  ],
+  "authors": [
+    {
+      "name": "Burak Boz",
+      "email": "killdeps@burakboz.net"
+    }
+  ]
+}
