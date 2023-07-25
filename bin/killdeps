@@ -178,7 +178,7 @@ function scanDirectory($directory, $useLockFile = false, $dryRun = false): void
     }
     else
     {
-        echo "Unreadable path.";
+        echo "Unreadable path. '$directory'\n";
     }
 }
 
