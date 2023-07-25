@@ -65,7 +65,7 @@ If(!(Test-Path "$env:USERPROFILE\bin"))
 Move-Item -Path .\killdeps -Destination "$env:USERPROFILE\bin"
 
 # Create a batch file to run the killdeps script with PHP
-Set-Content -Path "$env:USERPROFILE\bin\killdeps.bat" -Value "@echo off\r\nphp %USERPROFILE%\bin\killdeps %*"
+Set-Content -Path "$env:USERPROFILE\bin\killdeps.bat" -Value "php %USERPROFILE%\bin\killdeps %*"
 
 # Add the ~/bin directory to the system PATH
 $env:Path += ";$env:USERPROFILE\bin"
