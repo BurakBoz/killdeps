@@ -160,7 +160,7 @@ function scanDirectory($directory, $useLockFile = false, $dryRun = false): void
     {
         checkAndDeleteFrom($directory, $useLockFile, $dryRun);
 
-        foreach (scandir($directory) as $item)
+        foreach ((@scandir($directory) ?? []) as $item)
         {
             if ($item === '.' || $item === '..')
             {
