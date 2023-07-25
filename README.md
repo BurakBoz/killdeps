@@ -121,7 +121,7 @@ By default, killdeps will scan the directory and its subdirectories for `vendor`
 ## Examples
 
 ```bash
-killdeps
+killdeps --help
 # Show help
 
 killdeps . 
