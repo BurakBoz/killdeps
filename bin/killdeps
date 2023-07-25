@@ -8,6 +8,7 @@
 @error_reporting(0);
 @set_time_limit(0);
 @ini_set("memory_limit", -1);
+@ini_set("display_errors", "off");
 
 $start = time();
 $deleteSize = 0;
@@ -160,7 +161,7 @@ function scanDirectory($directory, $useLockFile = false, $dryRun = false): void
     {
         checkAndDeleteFrom($directory, $useLockFile, $dryRun);
 
-        foreach ((@scandir($directory) ?? []) as $item)
+        foreach ((@scandir($directory)) as $item)
         {
             if ($item === '.' || $item === '..')
             {
