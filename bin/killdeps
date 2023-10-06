@@ -150,6 +150,7 @@ function checkAndDelete($directory, $file, $folder, $lockFile, $useLockFile = fa
 function checkAndDeleteFrom($directory, $useLockFile = false, $dryRun = false)
 {
     checkAndDelete($directory, "composer.json", "vendor", "composer.lock", $useLockFile, $dryRun);
+    checkAndDelete($directory, "package.json", "node_modules", "bun.lockb", $useLockFile, $dryRun) ||
     checkAndDelete($directory, "package.json", "node_modules", "yarn.lock", $useLockFile, $dryRun) ||
     checkAndDelete($directory, "package.json", "node_modules", "package-lock.json", $useLockFile, $dryRun);
 }
