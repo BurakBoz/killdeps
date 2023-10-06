@@ -212,7 +212,7 @@ Parameters:
     [--help] | [-h]   - If provided, the script shows help
     
     [--only-locked]   - If provided, the script only deletes directories if respective lock files 
-                        ('composer.lock', 'yarn.lock', 'package-lock.json') are present in the same directory.
+                        ('composer.lock', 'bun.lockb', 'yarn.lock', 'package-lock.json') are present in the same directory.
     
     [--dry-run]       - If provided, the script performs a dry run. It scans the directories
                         and shows what it would delete, but it doesn't actually delete anything.
