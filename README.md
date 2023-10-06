@@ -1,6 +1,5 @@
 # killdeps
 
-![Build Status](https://travis-ci.com/burakboz/killdeps.svg?branch=main)
 ![Version](https://img.shields.io/badge/version-1.0.1-blue)
 ![PHP](https://img.shields.io/badge/php-%5E8.0-blue)
 
