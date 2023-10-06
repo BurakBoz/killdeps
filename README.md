@@ -14,6 +14,7 @@
 - User-friendly command-line interface.
 - Compatible with PHP 8+ and all modern JavaScript environments.
 - No dependency on third-party libraries.
+- Supports bun, yarn, npm lock files
 
 ## Installation
 
